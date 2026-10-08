@@ -1,0 +1,309 @@
+/* =========================================================================
+   JORDAN HERITAGE & TOURISM — BESPOKE ATMOSPHERIC DEPTH & SURFACE SYSTEM
+   Inspired by Jordanian topography: desert sandstone, rose rock, Dead Sea salt,
+   and starry night canopies.
+   ========================================================================= */
+
+/* Inline SVG Film Grain / Stone Texture overlay (hardware accelerated, 0 HTTP request) */
+.grain-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.048;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Desert Starlight & Cosmic Dust Overlay */
+.stars-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.25;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, #E2C799, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 100px 150px, #FFFFFF, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 240px 80px, #E2C799, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 320px 220px, #E2C799, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 450px 340px, #FFFFFF, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 580px 180px, #C5A059, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 600px 600px;
+}
+
+/* Geological Topography Contour Wave Overlay */
+.topography-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg width='500' height='500' viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 100 C150 140 350 60 500 100 M0 200 C180 240 320 160 500 200 M0 300 C120 340 380 260 500 300 M0 400 C160 440 340 360 500 400' fill='none' stroke='%23E2C799' stroke-width='1.2' stroke-dasharray='4 8'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Atmospheric Mesh Gradients per Landmark Territory */
+
+/* 1. Global Ambient Base */
+.bg-ambient-canvas {
+  background-color: #080709;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(154, 59, 59, 0.12) 0px, transparent 45%),
+    radial-gradient(circle at 85% 25%, rgba(197, 160, 89, 0.10) 0px, transparent 50%),
+    radial-gradient(circle at 50% 75%, rgba(27, 122, 130, 0.08) 0px, transparent 55%),
+    radial-gradient(circle at 80% 90%, rgba(154, 59, 59, 0.14) 0px, transparent 50%);
+}
+
+/* 2. Petra: Deep Terracotta, Rose Quartz, Dark Amber & Living Rock */
+.bg-territory-petra {
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(154, 59, 59, 0.28) 0%, transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(210, 95, 55, 0.20) 0%, transparent 60%),
+    radial-gradient(circle at 50% 95%, rgba(99, 35, 35, 0.55) 0%, transparent 70%),
+    #0A0809;
+}
+
+/* 3. Wadi Rum: Copper Sunset, Mars Sands fading into Deep Celestial Indigo */
+.bg-territory-wadirum {
+  background: 
+    radial-gradient(circle at 75% 20%, rgba(226, 199, 153, 0.22) 0%, transparent 50%),
+    radial-gradient(circle at 20% 65%, rgba(184, 74, 57, 0.24) 0%, transparent 55%),
+    radial-gradient(circle at 85% 90%, rgba(15, 23, 42, 0.85) 0%, transparent 65%),
+    #07070A;
+}
+
+/* 4. Dead Sea: Sun-Bleached Travertine, Mineral Salt & Azure Turquoise */
+.bg-territory-deadsea {
+  background: 
+    radial-gradient(circle at 25% 30%, rgba(27, 122, 130, 0.25) 0%, transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(226, 199, 153, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 50% 10%, rgba(251, 251, 251, 0.08) 0%, transparent 45%),
+    #060809;
+}
+
+/* 5. Jerash: Golden Roman Limestone, Sunlit Cardo & Bronze Honey */
+.bg-territory-jerash {
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(197, 160, 89, 0.26) 0%, transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(154, 105, 45, 0.18) 0%, transparent 60%),
+    #090806;
+}
+
+/* 6. Amman Citadel: Terracotta Sunset, White Stone & Caliphate Obsidian */
+.bg-territory-amman {
+  background: 
+    radial-gradient(circle at 30% 25%, rgba(184, 74, 57, 0.24) 0%, transparent 55%),
+    radial-gradient(circle at 70% 75%, rgba(154, 59, 59, 0.18) 0%, transparent 60%),
+    #090707;
+}
+
+/* Elevated Surface Engineering: Micro-hairline borders & Liquid Glass Highlights */
+.surface-stone-card {
+  position: relative;
+  background: rgba(16, 15, 18, 0.80);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(226, 199, 153, 0.18);
+  box-shadow: 
+    0 4px 20px -2px rgba(0, 0, 0, 0.55),
+    0 16px 48px -4px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.35);
+  border-radius: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateZ(0);
+  will-change: transform, border-color, box-shadow;
+}
+
+@media (hover: hover) {
+  .surface-stone-card:hover {
+    transform: translateY(-5px) translateZ(0);
+    border-color: rgba(226, 199, 153, 0.45);
+    box-shadow: 
+      0 16px 40px -4px rgba(0, 0, 0, 0.7),
+      0 28px 70px -8px rgba(154, 59, 59, 0.28),
+      inset 0 1px 0 rgba(226, 199, 153, 0.28),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.45);
+  }
+}
+
+.surface-stone-card:active {
+  transform: scale(0.985) translateZ(0);
+}
+
+/* Hairline Gradient Border Wrapper */
+.gradient-border-glow {
+  position: relative;
+}
+
+.gradient-border-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(226, 199, 153, 0.4) 0%,
+    rgba(154, 59, 59, 0.2) 50%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+@media (hover: hover) {
+  .gradient-border-glow:hover::before {
+    background: linear-gradient(
+      135deg,
+      rgba(226, 199, 153, 0.75) 0%,
+      rgba(154, 59, 59, 0.5) 50%,
+      rgba(226, 199, 153, 0.35) 100%
+    );
+  }
+}
+
+/* Floating Frosted Dock Styling with Apple-Grade Liquid Glass Highlights */
+.dock-frosted {
+  background: rgba(12, 11, 15, 0.78);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(226, 199, 153, 0.22);
+  box-shadow: 
+    0 20px 50px -8px rgba(0, 0, 0, 0.85),
+    0 2px 12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.45);
+  transform: translateZ(0);
+}
+
+/* GPU-Accelerated Atmospheric Light Orbs with Floating Motion */
+.ambient-glow-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(130px);
+  pointer-events: none;
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  animation: ambientFloat 14s ease-in-out infinite alternate;
+}
+
+@keyframes ambientFloat {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate(30px, -20px) scale(1.08);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate(-25px, 25px) scale(0.95);
+    opacity: 0.22;
+  }
+}
+
+/* Interactive Shimmer Beam Animation */
+@keyframes shimmerBeam {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer-beam {
+  background: linear-gradient(
+    90deg,
+    rgba(226, 199, 153, 0) 0%,
+    rgba(226, 199, 153, 0.35) 50%,
+    rgba(226, 199, 153, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmerBeam 3.5s ease-in-out infinite;
+}
+
+/* Luxury Language Switcher Glowing Jewel */
+.language-switcher-jewel {
+  background: linear-gradient(135deg, rgba(20, 18, 24, 0.96) 0%, rgba(12, 11, 15, 0.94) 100%);
+  border: 1px solid rgba(226, 199, 153, 0.35);
+  box-shadow: 
+    0 10px 30px -5px rgba(0, 0, 0, 0.8),
+    0 0 20px -3px rgba(154, 59, 59, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) {
+  .language-switcher-jewel:hover {
+    border-color: rgba(226, 199, 153, 0.7);
+    box-shadow: 
+      0 12px 35px -5px rgba(0, 0, 0, 0.85),
+      0 0 28px -2px rgba(226, 199, 153, 0.4),
+      inset 0 1px 0 rgba(226, 199, 153, 0.3),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+  }
+}
+
+/* =========================================================================
+   CINEMATIC HERITAGE CANVAS BACKGROUND UTILITIES
+   ========================================================================= */
+
+.heritage-living-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  user-select: none;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .heritage-living-canvas * {
+    animation-play-state: paused !important;
+  }
+  .animate-scroll {
+    animation-play-state: paused !important;
+  }
+}
+
+/* =========================================================================
+   ACETERNITY INFINITE MOVING CARDS
+   ========================================================================= */
+
+@keyframes scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-50% - 0.5rem), 0, 0);
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+}
+
+

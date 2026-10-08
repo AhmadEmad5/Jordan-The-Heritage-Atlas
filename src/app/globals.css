@@ -1,0 +1,176 @@
+@import "tailwindcss";
+@import "../styles/backgrounds.css";
+
+:root {
+  /* Phase 1: 3-Tier Token Architecture */
+  /* Tier 1: Primitive Tokens */
+  --rose-stone: #9A3B3B;
+  --rose-stone-light: #B84A39;
+  --rose-stone-dark: #632323;
+  --desert-sand: #E2C799;
+  --desert-sand-light: #F1DEC0;
+  --desert-sand-dark: #B99C6A;
+  --basalt-obsidian: #0F0F11;
+  --basalt-surface: #17171C;
+  --basalt-elevated: #22222B;
+  --salt-white: #FBFBFB;
+  --bronze-gold: #C5A059;
+  --cerulean-deadsea: #1B7A82;
+  --deep-indigo: #0B0E14;
+
+  /* Tier 2: Semantic Tokens */
+  --bg-canvas: #09090B;
+  --surface-card: rgba(23, 23, 28, 0.72);
+  --surface-card-hover: rgba(33, 33, 42, 0.88);
+  --surface-elevated: rgba(28, 28, 35, 0.95);
+  --text-editorial: #FBFBFB;
+  --text-primary: #EDEDED;
+  --text-secondary: #C7C2BA;
+  --text-muted: #B6B0A6;
+  --border-translucent: rgba(226, 199, 153, 0.16);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(154, 59, 59, 0.4);
+
+  /* Tier 3: Component Tokens */
+  --glass-bg: rgba(15, 15, 17, 0.78);
+  --glass-border: 1px solid rgba(226, 199, 153, 0.18);
+  --glass-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  --hud-bg: rgba(15, 15, 17, 0.85);
+  --booking-bar-bg: rgba(18, 18, 22, 0.92);
+}
+
+@theme {
+  --color-rose-stone: var(--rose-stone);
+  --color-desert-sand: var(--desert-sand);
+  --color-basalt-obsidian: var(--basalt-obsidian);
+  --color-salt-white: var(--salt-white);
+  --color-bronze-gold: var(--bronze-gold);
+  --color-cerulean-deadsea: var(--cerulean-deadsea);
+
+  --font-serif: var(--font-cormorant), var(--font-amiri), "Amiri", Georgia, serif;
+  --font-sans: var(--font-alexandria), var(--font-plus-jakarta), -apple-system, BlinkMacSystemFont, "Alexandria", "Segoe UI", Roboto, sans-serif;
+  --font-kufi: var(--font-alexandria), "Alexandria", sans-serif;
+  --font-calligraphy: var(--font-amiri), "Amiri", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:focus-visible {
+  outline: 2px solid #E2C799;
+  outline-offset: 2px;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-canvas);
+  color: var(--text-editorial);
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-editorial);
+  overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography styles */
+.font-display {
+  font-family: var(--font-cormorant), var(--font-amiri), Georgia, "Amiri", serif;
+  letter-spacing: -0.01em;
+}
+
+.font-arabic-calligraphy {
+  font-family: var(--font-amiri), "Amiri", serif;
+}
+
+.font-arabic-heading {
+  font-family: var(--font-alexandria), "Alexandria", sans-serif;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Glassmorphism & Surface utilities */
+.glass-panel {
+  background: var(--surface-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-translucent);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-pill {
+  background: rgba(22, 22, 28, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 199, 153, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.glass-elevated {
+  background: var(--surface-elevated);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(226, 199, 153, 0.25);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+}
+
+/* Sand & Rose Stone Gradient Accents */
+.text-sand-gradient {
+  background: linear-gradient(135deg, #FBFBFB 0%, #E2C799 50%, #C5A059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-rose-gradient {
+  background: linear-gradient(135deg, #F1DEC0 0%, #B84A39 60%, #9A3B3B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Safe area padding utilities */
+.safe-pb {
+  padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+}
+
+.safe-mb {
+  margin-bottom: max(1.25rem, env(safe-area-inset-bottom));
+}
+
+/* Scroll snap & no-scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Touch defense minimum 44x44px target */
+.touch-target {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Accessibility: Reduced motion query - only disable CSS animations/transitions, not JS-driven (GSAP) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto !important;
+  }
+}

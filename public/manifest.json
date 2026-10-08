@@ -1,0 +1,25 @@
+{
+  "name": "Jordan — The Heritage Atlas",
+  "short_name": "Jordan Atlas",
+  "description": "Interactive museum-grade heritage atlas of Jordan with offline destination field notes and archaeological discoveries.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d110f",
+  "theme_color": "#0d110f",
+  "icons": [
+    {
+      "src": "/images/petra.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/petra.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["travel", "education", "culture"]
+}
