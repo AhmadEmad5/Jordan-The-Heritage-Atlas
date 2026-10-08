@@ -252,13 +252,6 @@ export function HeritageCanvasBackground({
 
     function onMediaChange(e: MediaQueryListEvent) {
       prefersReducedMotion = e.matches;
-      if (prefersReducedMotion && animId !== null) {
-        cancelAnimationFrame(animId);
-        animId = null;
-        renderStaticFrame();
-      } else if (!prefersReducedMotion && animId === null) {
-        animId = requestAnimationFrame(loop);
-      }
     }
 
     if (mediaQuery.addEventListener) {
@@ -384,7 +377,7 @@ export function HeritageCanvasBackground({
     }
 
     function loop(time: number) {
-      if (prefersReducedMotion) return;
+      const effectiveTime = prefersReducedMotion ? time * 0.3 : time;
 
       // Smooth lerp mouse tracking
       currentMouseX += (targetMouseX - currentMouseX) * 0.045;
@@ -394,7 +387,7 @@ export function HeritageCanvasBackground({
         ctx.clearRect(0, 0, width, height);
 
         // Layer 1: Topographic Elevation Contours
-        drawTopographicContours(time, currentMouseX, currentMouseY, scrollY);
+        drawTopographicContours(effectiveTime, currentMouseX, currentMouseY, scrollY);
 
         // Layer 2: Desert Dust & Starlight Particle System
         const colors = activeTheme.particleColors;
@@ -402,7 +395,7 @@ export function HeritageCanvasBackground({
           const p = particles[i];
 
           // Advance particle position
-          p.x += p.vx + Math.sin(time * 0.0008 + p.pulsePhase) * 0.16;
+          p.x += p.vx + Math.sin(effectiveTime * 0.0008 + p.pulsePhase) * 0.16;
           p.y += p.vy;
 
           // Boundary wrapping
@@ -416,7 +409,7 @@ export function HeritageCanvasBackground({
           // Gentle breathing opacity
           const alpha =
             p.baseAlpha *
-            (0.55 + 0.45 * Math.sin(time * p.pulseSpeed + p.pulsePhase));
+            (0.55 + 0.45 * Math.sin(effectiveTime * p.pulseSpeed + p.pulsePhase));
 
           const prefix = colors[p.colorIdx % colors.length] || colors[0];
           ctx.fillStyle = `${prefix}${alpha.toFixed(3)})`;
@@ -429,11 +422,7 @@ export function HeritageCanvasBackground({
       animId = requestAnimationFrame(loop);
     }
 
-    if (!prefersReducedMotion) {
-      animId = requestAnimationFrame(loop);
-    } else {
-      renderStaticFrame();
-    }
+    animId = requestAnimationFrame(loop);
 
     return () => {
       if (animId !== null) cancelAnimationFrame(animId);
