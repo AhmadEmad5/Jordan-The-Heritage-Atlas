@@ -23,6 +23,8 @@ import {
   ChevronRight,
   Sparkles,
   ArrowLeft,
+  Maximize2,
+  Minimize2,
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import {
@@ -36,13 +38,18 @@ import { CometCard } from "@/components/ui/comet-card";
 import VoiceNarrationPlayer, { type NarrationTrack } from "@/components/VoiceNarrationPlayer";
 
 const motionQuery = "(prefers-reduced-motion: reduce)";
+
 function subscribeMotion(onChange: () => void) {
-  const query = window.matchMedia(motionQuery);
-  query.addEventListener("change", onChange);
-  return () => query.removeEventListener("change", onChange);
+  if (typeof window === "undefined" || !window.matchMedia) return () => {};
+  const media = window.matchMedia(motionQuery);
+  media.addEventListener?.("change", onChange);
+  return () => media.removeEventListener?.("change", onChange);
 }
-const getMotionPreference = () => window.matchMedia(motionQuery).matches;
-const getServerMotionPreference = () => true;
+const getMotionPreference = () => {
+  if (typeof window === "undefined" || !window.matchMedia) return false;
+  return window.matchMedia(motionQuery).matches;
+};
+const getServerMotionPreference = () => false;
 
 function getEraDateBadge(era: HistoricalEra): string {
   const p = era.periodEn;
@@ -112,6 +119,7 @@ export default function Scrollytelling({
   const cinematic =
     preference === "cinematic" || (preference === "system" && !reducedMotion);
   const [activeScene, setActiveScene] = useState(0);
+  const [isCinemaImmersion, setIsCinemaImmersion] = useState(false);
   const root = useRef<HTMLDivElement>(null);
   const stage = useRef<HTMLElement>(null);
   const timeline = useRef<gsap.core.Timeline | null>(null);
@@ -176,7 +184,7 @@ export default function Scrollytelling({
     }
   }
 
-  // Keyboard navigation for jumping between epochs
+  // Keyboard navigation for jumping between epochs and toggling immersion
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if (
@@ -185,17 +193,21 @@ export default function Scrollytelling({
       ) {
         return;
       }
-      if (e.key === "ArrowRight") {
+      if (e.key === "Escape" && isCinemaImmersion) {
+        setIsCinemaImmersion(false);
+        return;
+      }
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
         e.preventDefault();
         jumpToScene(Math.min(scenes.length - 1, activeSceneRef.current + 1));
-      } else if (e.key === "ArrowLeft") {
+      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
         e.preventDefault();
         jumpToScene(Math.max(0, activeSceneRef.current - 1));
       }
     }
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [jumpToScene, scenes.length]);
+  }, [jumpToScene, scenes.length, isCinemaImmersion]);
 
   useLayoutEffect(() => {
     const element = stage.current;
@@ -427,7 +439,7 @@ export default function Scrollytelling({
       <section
         id="chapters"
         ref={stage}
-        className={`cinema-stage ${cinematic ? "is-cinematic" : "is-reading"}`}
+        className={`cinema-stage ${cinematic ? "is-cinematic" : "is-reading"} ${isCinemaImmersion ? "is-cinema-fullscreen" : ""}`}
         data-active-scene={activeScene + 1}
         aria-label={`${d.name} story chapters`}
       >
@@ -562,6 +574,38 @@ export default function Scrollytelling({
                 <ChevronRight size={16} />
               </motion.button>
             </div>
+
+            {cinematic && (
+              <motion.button
+                type="button"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.95 }}
+                className={`story-immersion-toggle ${isCinemaImmersion ? "is-active" : ""}`}
+                onClick={() => setIsCinemaImmersion((prev) => !prev)}
+                aria-label={
+                  isCinemaImmersion
+                    ? "Exit cinema immersion mode"
+                    : "Enter cinema immersion mode"
+                }
+                title={
+                  isCinemaImmersion
+                    ? "Exit cinema view (Esc)"
+                    : "Cinema immersion mode (Focus theater view)"
+                }
+              >
+                {isCinemaImmersion ? (
+                  <>
+                    <Minimize2 size={13} />
+                    <span className="hidden xl:inline">Exit Cinema</span>
+                  </>
+                ) : (
+                  <>
+                    <Maximize2 size={13} />
+                    <span className="hidden xl:inline">Cinema View</span>
+                  </>
+                )}
+              </motion.button>
+            )}
 
             <motion.button
               type="button"
@@ -787,6 +831,53 @@ export default function Scrollytelling({
             <ArrowDown size={15} />
           </motion.div>
         </div>
+
+        {/* Interactive Vertical Era Timeline Scrubber Rail (Desktop) */}
+        {cinematic && scenes.length > 0 && (
+          <aside
+            className="era-scrubber-rail hidden lg:flex"
+            aria-label="Chronological era timeline rail"
+          >
+            <div className="scrubber-track-line" aria-hidden="true">
+              <div
+                className="scrubber-track-progress"
+                style={{
+                  height: `${scenes.length > 1 ? (activeScene / (scenes.length - 1)) * 100 : 100}%`,
+                }}
+              />
+            </div>
+            <div className="scrubber-nodes-container">
+              {scenes.map((era, idx) => {
+                const isActive = activeScene === idx;
+                const isPassed = activeScene >= idx;
+                const shortTitle = getEraShortName(era);
+                const dateBadge = getEraDateBadge(era);
+                return (
+                  <div key={era.id} className="scrubber-node-wrapper">
+                    <button
+                      type="button"
+                      onClick={() => jumpToScene(idx)}
+                      className={`scrubber-node ${isActive ? "is-active" : ""} ${isPassed ? "is-passed" : ""}`}
+                      aria-label={`Jump to Epoch 0${idx + 1}: ${era.eraNameEn}`}
+                      aria-current={isActive ? "step" : undefined}
+                    >
+                      <span className="scrubber-dot" />
+                      {isActive && <span className="scrubber-active-glow" />}
+                    </button>
+                    <div className="scrubber-tooltip" role="tooltip">
+                      <div className="tooltip-epoch">EPOCH 0{idx + 1}</div>
+                      <div className="tooltip-title">{shortTitle}</div>
+                      <div className="tooltip-title-ar" lang="ar">
+                        {era.eraNameAr.split("و")[0].split("في")[0].trim()}
+                      </div>
+                      <div className="tooltip-date">{dateBadge}</div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </aside>
+        )}
 
         {/* Documentary Audio Narration HUD */}
         <VoiceNarrationPlayer

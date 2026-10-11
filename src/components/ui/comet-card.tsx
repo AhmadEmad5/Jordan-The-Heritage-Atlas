@@ -6,7 +6,6 @@ import {
   useSpring,
   useTransform,
   useMotionTemplate,
-  useReducedMotion,
 } from "motion/react";
 import { cn } from "@/lib/utils";
 
@@ -24,7 +23,6 @@ export const CometCard = ({
   children: React.ReactNode;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const shouldReduceMotion = useReducedMotion();
   const mounted = useSyncExternalStore(
     emptySubscribe,
     () => true,
@@ -41,31 +39,23 @@ export const CometCard = ({
   const rotateX = useTransform(
     mouseYSpring,
     [-0.5, 0.5],
-    shouldReduceMotion
-      ? ["0deg", "0deg"]
-      : [`-${rotateDepth}deg`, `${rotateDepth}deg`],
+    [`-${rotateDepth}deg`, `${rotateDepth}deg`],
   );
   const rotateY = useTransform(
     mouseXSpring,
     [-0.5, 0.5],
-    shouldReduceMotion
-      ? ["0deg", "0deg"]
-      : [`${rotateDepth}deg`, `-${rotateDepth}deg`],
+    [`${rotateDepth}deg`, `-${rotateDepth}deg`],
   );
 
   const translateX = useTransform(
     mouseXSpring,
     [-0.5, 0.5],
-    shouldReduceMotion
-      ? ["0px", "0px"]
-      : [`-${translateDepth}px`, `${translateDepth}px`],
+    [`-${translateDepth}px`, `${translateDepth}px`],
   );
   const translateY = useTransform(
     mouseYSpring,
     [-0.5, 0.5],
-    shouldReduceMotion
-      ? ["0px", "0px"]
-      : [`${translateDepth}px`, `-${translateDepth}px`],
+    [`${translateDepth}px`, `-${translateDepth}px`],
   );
 
   const glareX = useTransform(mouseXSpring, [-0.5, 0.5], [10, 90]);
@@ -73,8 +63,11 @@ export const CometCard = ({
 
   const glareBackground = useMotionTemplate`radial-gradient(circle 320px at ${glareX}% ${glareY}%, rgba(229, 185, 143, 0.32) 0%, rgba(255, 255, 255, 0.16) 28%, transparent 75%)`;
 
+  const [isHovered, setIsHovered] = React.useState(false);
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (shouldReduceMotion || !ref.current) return;
+    if (!isHovered) setIsHovered(true);
+    if (!ref.current) return;
 
     const rect = ref.current.getBoundingClientRect();
     const width = rect.width;
@@ -91,6 +84,7 @@ export const CometCard = ({
   };
 
   const handleMouseLeave = () => {
+    setIsHovered(false);
     x.set(0);
     y.set(0);
   };
@@ -121,30 +115,28 @@ export const CometCard = ({
               }
         }
         initial={{ scale: 1 }}
-        whileHover={
-          shouldReduceMotion
-            ? undefined
-            : {
-                scale: 1.025,
-                transition: { duration: 0.25, ease: "easeOut" },
-              }
-        }
+        whileHover={{
+          scale: 1.025,
+          transition: { duration: 0.25, ease: "easeOut" },
+        }}
         className="relative h-full w-full rounded-2xl overflow-hidden group bg-[var(--surface-card,#131a16)] p-[1.5px]"
       >
         {/* Animated Orbiting Comet Border Beam */}
         <div className="pointer-events-none absolute -inset-[100%] m-auto aspect-square opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
-          <motion.div
-            animate={shouldReduceMotion ? undefined : { rotate: 360 }}
-            transition={{
-              duration: 4.5,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="w-full h-full"
-            style={{
-              background: `conic-gradient(from 0deg, transparent 0deg, transparent 270deg, rgba(229,185,143,0.3) 310deg, #e5b98f 345deg, #ffffff 360deg)`,
-            }}
-          />
+          {isHovered && (
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{
+                duration: 4.5,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="w-full h-full"
+              style={{
+                background: `conic-gradient(from 0deg, transparent 0deg, transparent 270deg, rgba(229,185,143,0.3) 310deg, #e5b98f 345deg, #ffffff 360deg)`,
+              }}
+            />
+          )}
         </div>
 
         {/* Inner Card Layer */}

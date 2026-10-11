@@ -42,13 +42,27 @@ export function InfiniteMovingCards<T extends InfiniteMovingItem = InfiniteMovin
     return [...items, ...items];
   }, [items]);
 
+  const [isInView, setIsInView] = useState(true);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        setIsInView(entries[0]?.isIntersecting ?? true);
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   const setupAnimation = useCallback(() => {
     if (!containerRef.current) return;
 
     // Set direction
     containerRef.current.style.setProperty(
       "--animation-direction",
-      direction === "left" ? "forwards" : "reverse"
+      direction === "left" ? "normal" : "reverse"
     );
 
     // Set speed
@@ -73,6 +87,9 @@ export function InfiniteMovingCards<T extends InfiniteMovingItem = InfiniteMovin
     >
       <ul
         ref={scrollerRef}
+        style={{
+          animationPlayState: isInView ? "running" : "paused",
+        }}
         className={cn(
           "flex w-max min-w-full shrink-0 flex-nowrap gap-6 py-4",
           start && "animate-scroll",

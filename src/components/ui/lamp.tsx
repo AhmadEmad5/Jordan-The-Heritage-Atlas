@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -19,7 +19,6 @@ export const LampEffect = ({
   accentColor?: string;
   size?: "sm" | "md" | "lg";
 }) => {
-  const shouldReduceMotion = useReducedMotion();
 
   const heightClass =
     size === "sm" ? "h-16" : size === "lg" ? "h-36" : "h-24";
@@ -39,16 +38,8 @@ export const LampEffect = ({
       <div className="absolute inset-0 flex items-start justify-center opacity-70 group-hover:opacity-95 transition-opacity duration-500">
         {/* Left Conic Light Beam */}
         <motion.div
-          initial={
-            shouldReduceMotion
-              ? { opacity: 0.6, width: "65%" }
-              : { opacity: 0.3, width: "35%" }
-          }
-          animate={
-            shouldReduceMotion
-              ? { opacity: 0.6, width: "65%" }
-              : { opacity: 0.85, width: "65%" }
-          }
+          initial={{ opacity: 0.3, width: "35%" }}
+          animate={{ opacity: 0.85, width: "65%" }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="absolute -top-6 right-1/2 h-32 w-1/2"
           style={{
@@ -62,16 +53,8 @@ export const LampEffect = ({
 
         {/* Right Conic Light Beam */}
         <motion.div
-          initial={
-            shouldReduceMotion
-              ? { opacity: 0.6, width: "65%" }
-              : { opacity: 0.3, width: "35%" }
-          }
-          animate={
-            shouldReduceMotion
-              ? { opacity: 0.6, width: "65%" }
-              : { opacity: 0.85, width: "65%" }
-          }
+          initial={{ opacity: 0.3, width: "35%" }}
+          animate={{ opacity: 0.85, width: "65%" }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="absolute -top-6 left-1/2 h-32 w-1/2"
           style={{
@@ -97,11 +80,7 @@ export const LampEffect = ({
 
       {/* Radiant Top Filament Beam */}
       <motion.div
-        initial={
-          shouldReduceMotion
-            ? { width: lineWidth, opacity: 0.8 }
-            : { width: "25%", opacity: 0.3 }
-        }
+        initial={{ width: "25%", opacity: 0.3 }}
         animate={{ width: lineWidth, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="absolute top-0 left-1/2 -translate-x-1/2 h-[1.5px]"
@@ -159,8 +138,6 @@ export const LampContainer = ({
   color?: string;
   accentColor?: string;
 }) => {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <div
       className={cn(
@@ -170,11 +147,7 @@ export const LampContainer = ({
     >
       <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0">
         <motion.div
-          initial={
-            shouldReduceMotion
-              ? { opacity: 0.8, width: "30rem" }
-              : { opacity: 0.4, width: "15rem" }
-          }
+          initial={{ opacity: 0.4, width: "15rem" }}
           animate={{ opacity: 1, width: "30rem" }}
           transition={{
             delay: 0.2,
@@ -191,11 +164,7 @@ export const LampContainer = ({
         </motion.div>
 
         <motion.div
-          initial={
-            shouldReduceMotion
-              ? { opacity: 0.8, width: "30rem" }
-              : { opacity: 0.4, width: "15rem" }
-          }
+          initial={{ opacity: 0.4, width: "15rem" }}
           animate={{ opacity: 1, width: "30rem" }}
           transition={{
             delay: 0.2,

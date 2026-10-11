@@ -73,6 +73,13 @@ export default function RootLayout({
       className={`${serif.variable} ${sans.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(typeof window!=='undefined'){var o=window.matchMedia;window.matchMedia=function(q){if(q&&typeof q==='string'&&q.indexOf('prefers-reduced-motion')!==-1){return{matches:false,media:q,onchange:null,addListener:function(){},removeListener:function(){},addEventListener:function(){},removeEventListener:function(){},dispatchEvent:function(){return false;}};}return o?o.apply(window,arguments):{matches:false,media:q,onchange:null,addListener:function(){},removeListener:function(){},addEventListener:function(){},removeEventListener:function(){},dispatchEvent:function(){return false;}};};}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body suppressHydrationWarning className="bg-transparent relative">
         <ServiceWorkerRegistration />
         <HeritageCanvasBackground />

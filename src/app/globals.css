@@ -63,7 +63,8 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* Prevent browser-native smooth scrolling from interfering with GSAP ScrollTrigger pinning and scrubs */
+  scroll-behavior: auto;
   background-color: var(--bg-canvas);
   color: var(--text-editorial);
   font-family: var(--font-sans);
@@ -161,9 +162,4 @@ body {
   justify-content: center;
 }
 
-/* Accessibility: Respect motion preferences without breaking interface transitions */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto !important;
-  }
-}
+

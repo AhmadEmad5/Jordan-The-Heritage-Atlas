@@ -27,6 +27,9 @@ vi.mock("next/image", () => ({
     return React.createElement("img", props);
   },
 }));
+vi.mock("@/components/ModelViewer3D", () => ({
+  default: () => React.createElement("div", { "data-testid": "model-viewer-3d-mock" }),
+}));
 HTMLDialogElement.prototype.showModal = function () {
   this.setAttribute("open", "");
 };

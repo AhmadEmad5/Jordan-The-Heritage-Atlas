@@ -1,184 +1,135 @@
 # 🇯🇴 Jordan — The Heritage Atlas
+### *أطلس التراث الأردني · An Immersive Museum-Grade Digital Expedition*
 
-### *أطلس التراث الأردني · An Immersive Digital Expedition*
+<p align="center">
+  <img src="public/screenshots/01-hero-atlas.png" alt="Jordan Heritage Atlas — Interactive Cartographic Gateway" width="100%" style="border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.6);" />
+</p>
 
-[![Next.js](https://img.shields.io/badge/Next.js-16.3.8-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19.2.8-20232A?style=for-the-badge&logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-[![GSAP](https://img.shields.io/badge/GSAP-3.15-88CE02?style=for-the-badge&logo=greensock)](https://greensock.com/)
-[![Vitest](https://img.shields.io/badge/Vitest-4.1.11-6E9F18?style=for-the-badge&logo=vitest)](https://vitest.dev/)
-[![Playwright](https://img.shields.io/badge/Playwright-1.63-2EAD33?style=for-the-badge&logo=playwright)](https://playwright.dev/)
-[![Accessibility](https://img.shields.io/badge/WCAG_2.2-AAA_Compliant-gold?style=for-the-badge)](https://www.w3.org/WAI/standards-guidelines/wcag/)
+<p align="center">
+  <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-16.3.8%20(Turbopack)-black?style=for-the-badge&logo=next.js" alt="Next.js" /></a>
+  <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-19.2.8-20232A?style=for-the-badge&logo=react" alt="React" /></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" /></a>
+  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-v4.x-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind CSS" /></a>
+  <a href="https://threejs.org/"><img src="https://img.shields.io/badge/Three.js-WebGL_PBR-000000?style=for-the-badge&logo=three.js" alt="Three.js" /></a>
+  <a href="https://greensock.com/"><img src="https://img.shields.io/badge/GSAP-3.15%20ScrollTrigger-88CE02?style=for-the-badge&logo=greensock" alt="GSAP" /></a>
+  <a href="https://vitest.dev/"><img src="https://img.shields.io/badge/Vitest-4.1.11-6E9F18?style=for-the-badge&logo=vitest" alt="Vitest" /></a>
+  <a href="https://playwright.dev/"><img src="https://img.shields.io/badge/Playwright-1.63-2EAD33?style=for-the-badge&logo=playwright" alt="Playwright" /></a>
+  <a href="https://www.w3.org/WAI/standards-guidelines/wcag/"><img src="https://img.shields.io/badge/WCAG_2.2-AAA_Compliant-gold?style=for-the-badge" alt="Accessibility" /></a>
+</p>
 
-> **A museum-grade interactive digital odyssey bringing 12,000 years of civilization, Nabataean engineering, and breathtaking topography to the modern web.**
+<p align="center">
+  <strong>منصة وثائقية أثرية تفاعلية تجمع بين 12,000 عام من الحضارة وعمارة الأنباط وتضاريس الأردن في تجربة رقمية فائقة التطور.</strong><br>
+  <em>A museum-grade digital odyssey uniting 12,000 years of civilization, Nabataean hydraulic engineering, and Jordan's dramatic topography.</em>
+</p>
 
-[Explore Destinations](#-core-features) • [Motion Architecture](#-motion--ux-architecture) • [Tech Stack](#-technology-stack) • [Getting Started](#-getting-started--local-development) • [Testing & Verification](#-testing--verification)
-
----
-
-## 🏛️ Vision & Manifesto
-
-**Jordan: The Heritage Atlas** is an interactive cultural expedition platform engineered to bridge historical preservation with cutting-edge web craftsmanship. Rather than serving static brochure pages, the platform reimagines tourism through **spatial storytelling**, **cartographic exploration**, and **cinematic scrollytelling**.
-
-Every destination—from the rose-red sandstone clefts of **Petra** and the Martian stillness of **Wadi Rum** to the mineral shores of the **Dead Sea** and the Roman colonnades of **Jerash**—is treated as a living museum exhibit. 
-
-Built with principles from `ui-ux-pro-max`, `motion`, and GreenSock (`gsap-ai-skills`), the Atlas blends rigorous performance engineering (60fps GPU compositor budgeting) with editorial typographic restraint, deep bilingual cultural authenticity (English / Arabic), and ethical, verified visitor discovery.
-
----
-
-## 🧭 Core Features
-
-### 1. Interactive Topographic Map (Visual Gateway)
-* **Geographic Cartography Engine**: An SVG-projected national outline of the Hashemite Kingdom of Jordan featuring mathematically anchored destination waypoints calculated from real geographic coordinates (`latitude` / `longitude`).
-* **Northern Cluster Leader Lines**: To solve dense waypoint collision in Jordan’s northern highlands (Jerash, Ajloun, Umm Qais), the map implements an intelligent callout system with leader lines, guaranteeing minimum 44×44 CSS-pixel accessible touch targets (`Apple HIG` & `WCAG 2.2 AAA`).
-* **Dynamic Category Filtering**: Fluidly filters regions across three curated journeys:
-  * 🏛️ *Ancient Wonders* (Petra, Jerash, Umm Qais)
-  * 🏜️ *Wild Landscapes* (Wadi Rum, Dana Biosphere Reserve, Dead Sea)
-  * 🌿 *Living Heritage* (Ajloun Castle & Forest, local community culinary tables)
-* **Micro-Interactive Telemetry**: Beacon pulses, magnetic cursor glows, elevation contour accents, and keyboard tab-through indexing with live preview drawers.
+<p align="center">
+  <a href="#-visual-tour--interface-showcase">معرض لقطات الشاشة</a> •
+  <a href="#-core-features">الميزات الرئيسية</a> •
+  <a href="#-3d--spatial-architecture">المجسمات ثلاثية الأبعاد</a> •
+  <a href="#-motion--performance-engineering">محرك الحركة والأداء</a> •
+  <a href="#-technology-stack">التقنيات المستخدمة</a> •
+  <a href="#-getting-started">التشغيل المحلي</a> •
+  <a href="#-testing--quality-assurance">الاختبارات</a>
+</p>
 
 ---
 
-### 2. Cinematic 3-Act Scrollytelling
-Every destination page features a three-act documentary narrative driven by scroll position:
-* **Act I: The Arrival** — Setting the scene, geographical entry, and emotional resonance.
-* **Act II: The Marvel** — The architectural, hydraulic, or geological triumph of the site.
-* **Act III: The Living Legacy** — Modern Bedouin stewardship, conservation, and cultural continuity.
-* **Scroll-Bound Camera Movement**: Built on GSAP `ScrollTrigger` with `scrub: 1`, delivering natural inertia, reversible camera zooms, and tactile spatial transitions.
-* **Scroll-Drawn Field-Notes Diagrams**: Archaeological technical sketches that dynamically draw their SVG strokes (`stroke-dashoffset`) in sync with the user's scroll depth.
+## 🏛️ الرؤية والمنهج (Vision & Manifesto)
+
+**Jordan: The Heritage Atlas** يهدف إلى إعادة صياغة استكشاف التراث الرقمي والسياحة الثقافية عبر تجاوز مفاهيم الكتيبات والمواقع التقليدية، مقدماً تجربة **استكشاف كارتوغرافي**، و**سرد زمني سينمائي (Cinematic Scrollytelling)**، و**فحص أثري ثلاثي الأبعاد بالضوء الحقيقي (PBR WebGL)**.
+
+تمت هندسة التطبيق ليعمل بمعدل **60 إطاراً في الثانية (60fps)** بدون أي هبوط في الأداء، مع دعم ثنائي اللغة (العربية والإنجليزية)، ومراعاة أعلى معايير الوصول الرقمي (`WCAG 2.2 AAA`)، وتجربة مستخدم فاخرة مستوحاة من رمال وادي رم الوردية وحجارة البتراء المنحوتة في الصخر.
 
 ---
 
-### 3. Slide Snapping Engine & Dynamic HUD
-* **Viewport Snapping Geometry**: Dedicated viewport management for dramatic, full-bleed storytelling with smooth scroll-jacking prevention and trackpad dampening.
-* **Dynamic HUD Chapter Rail**: Real-time chapter progress bars, active coordinate readout, and one-click scrub jump points.
-* **Historical Chronology Matrix (`HistoricalTimeline.tsx`)**: Interactive horizontal era browser traversing the Nabataean, Roman, Byzantine, Islamic, and Modern epochs with artifacts, architecture styles, and verified archaeological dates.
+## 📸 Visual Tour & Interface Showcase (معرض الشاشات)
+
+### 1. البوابة الكارتوغرافية والخريطة التفاعلية (Interactive Cartography & Map Gateway)
+خريطة طوبوغرافية حية للمملكة الأردنية الهاشمية مبنية بحسابات إسقاط إحداثي دقيق (`Latitude/Longitude`)، تدعم خطوط الإشارة الدقيقة للمواقع المتقاربة في الشمال (جرش، عجلون، أم قيس)، مع فلاتر المسارات السياحية الثلاثة (عجائب قديمة، طبيعة برية، تراث حي)، ومؤشرات التلمس المغناطيسي وشارة البحث `⌘K`.
+
+<p align="center">
+  <img src="public/screenshots/01-hero-atlas.png" alt="Jordan Topographic Map and Visual Gateway" width="100%" style="border-radius: 8px; border: 1px solid rgba(226, 199, 153, 0.2);" />
+</p>
 
 ---
 
-### 4. Living Canvas Ambiance (`HeritageCanvasBackground.tsx`)
-* **Procedural Topographic Contours**: Hardware-accelerated HTML5 Canvas rendering fluid, undulating elevation waves that react to user scroll trajectory.
-* **Atmospheric Particulate Simulation**: Subtle desert dust and star mist generated using procedural noise without stressing the CPU.
-* **Adaptive Heritage Color System**: Canvas and lighting ambient hues dynamically adapt per destination:
-  * *Petra*: Rose sandstone (`#e2c799`), oxidized terracotta (`#b35446`).
-  * *Wadi Rum*: Desert dusk obsidian (`#0d110f`), solar amber (`#f5a623`).
-  * *Dead Sea*: Mineral salt lapis (`#2a4d69`), saline cyan (`#79a7d3`).
-  * *Ajloun*: Highland pine emerald (`#1e3f20`), wet stone slate (`#4a5859`).
-* **Aceternity Lens Magnifier (`lens.tsx`)**: Real-time virtual magnifying lens revealing macro details of rock textures, mosaic tesserae, and inscriptions.
+### 2. السرد الوثائقي الزمني عبر 5 حقب تاريخية (Cinematic 5-Epoch Scrollytelling)
+رحلة سردية عبر آلاف السنين في كل موقع أثري (مثل البتراء)، مدعومة بمحرك **GSAP ScrollTrigger** وشريط المسار الزمني الجانبي التفاعلي (**Vertical Era Scrubber Rail**) مع نبضات ذهبية حية، وبطاقات التلميح ثنائية اللغة، ووضع السينما الغامرة (**Cinema Immersion Mode**)، والتعليق الصوتي الوثائقي التلقائي.
+
+<p align="center">
+  <img src="public/screenshots/03-scrollytelling-cinematic.png" alt="Petra 5-Epoch Historical Chronology Scrollytelling" width="100%" style="border-radius: 8px; border: 1px solid rgba(226, 199, 153, 0.2);" />
+</p>
 
 ---
 
-### 5. Elevated Stay & Provider Discovery Suite
-* **Native-Integrated Dark Date Cards**: Replaces browser-default white pickers with frosted glass date cards (`.date-field-card`), custom gold indicators (`::-webkit-calendar-picker-indicator`), and `color-scheme: dark`.
-* **Quick Stay Presets**: One-tap duration chips: *Tonight (1n)*, *Weekend (2n)*, and *Retreat (3n)* with automated check-in/check-out calculation.
-* **Dynamic Duration Badge**: Real-time badge computing stay duration (e.g. `✨ 2 nights stay in Wadi Rum` / `ليلتان في وادي رم`).
-* **Ethical Verification**: Direct routing to verified providers via Google Maps queries; does not scrape or harvest private booking credentials.
+### 3. الخزانة الأثرية ثلاثية الأبعاد (3D Virtual Archaeological Relic Showcase)
+عارض متحفي واقعي بتقنية **Three.js WebGL** مع خامات PBR عالية الدقة (وعاء الفخار النبطي، عملة جراسا الرومانية، فسيفساء مادبا، وتماثيل عين غزال). يشمل تحكماً كاملاً بالدوران الحر والتكبير الميكروسكوبي، وتبديل الإضاءة الأثرية المائلة (**Archaeological Raking Light**)، ووضع المسرح الموسع بكامل الشاشة (**3D Theater Modal**).
+
+<p align="center">
+  <img src="public/screenshots/02-artifact-showcase-3d.png" alt="3D Archaeological Relic Viewer with Museum Lighting" width="100%" style="border-radius: 8px; border: 1px solid rgba(226, 199, 153, 0.2);" />
+</p>
 
 ---
 
-### 6. Ambient Spatial Audio Engine (`AmbientSoundscape.tsx`)
-* **Procedural Acoustic Synthesis**: Leverages the native `Web Audio API` to generate organic, destination-tailored acoustic soundscapes directly in the browser with **zero external audio file downloads (0KB overhead)**.
-* **Bespoke Natural Ambience**:
-  * *Wadi Rum & Dana*: Organic Brownian-noise desert wind gusts and sub-bass resonance.
-  * *Petra*: Meditative sandstone canyon flute drone (432Hz harmonic series) with binaural acoustic pulsation.
-  * *Dead Sea*: Gentle low-frequency mineral saline wave lapping.
-  * *Ajloun & Jerash*: Highland forest canopy breeze and ancient stone whispers.
-* **Interactive Navigation Dock**: Elegant floating toggle with live pulsing gold equalizer wave animation (`audio-bars-wave`) and automatic battery-saving sleep when tab is hidden.
+### 4. مخطط الرحلات البرية التفاعلي (Royal Routes Itinerary Workbench)
+أداة ذكية لتخطيط الرحلات وحساب مسافات القيادة وساعات السفر الموصى بها لحظياً عبر الطرق الملكية التاريخية (المثلث الذهبي الجنوبي، الطريق الملوكي، ومدن حلف الديكابولس العشر)، مع إمكانية إعادة ترتيب المحطات والتصدير الفوري لمسار Google Maps.
+
+<p align="center">
+  <img src="public/screenshots/04-itinerary-planner.png" alt="Royal Routes Road Trip Itinerary Planner" width="100%" style="border-radius: 8px; border: 1px solid rgba(226, 199, 153, 0.2);" />
+</p>
 
 ---
 
-### 7. Smart Road Expedition & Itinerary Planner (`ItineraryPlanner.tsx`)
-* **Curated Royal Routes**: Quick-load historical expeditions including *The Golden Desert Triangle (3 Days · 380 km)*, *The King's Highway Expedition (4 Days · 460 km)*, and *Northern Decapolis & Highlands (2 Days · 210 km)*.
-* **Interactive Waypoint Workbench**: Allows travelers to customize, reorder, or append waypoints across all 7 destinations with live recalculation of total distance (km), scenic driving hours, and recommended trip duration.
-* **One-Click Export**: Generates a pre-filled Google Maps multi-stop GPS navigation route or copies a structured travel itinerary to the clipboard.
+### 5. جواز السفر التراثي الملكي ومجمع الأختام (Digital Heritage Passport & Stamps)
+كتيب جواز سفر تراثي رقمي يحاكي الوثائق الملكية القديمة بألوان الزمرد والذهب، يمنح الرحالة أختاماً قنصلية كلاسيكية عند زيارة كل موقع أثري مع مؤثرات ارتدادية، ويتيح إصدار شهادة استكشاف رسمية قابلة للمشاركة.
+
+<p align="center">
+  <img src="public/screenshots/05-heritage-passport.png" alt="Digital Heritage Passport and Consular Seals" width="100%" style="border-radius: 8px; border: 1px solid rgba(226, 199, 153, 0.2);" />
+</p>
 
 ---
 
-### 8. Atmospheric Telemetry & Dark-Sky Canopy (`DesertTelemetryCard.tsx`)
-* **International Bortle Dark-Sky Scale**: Real astronomical classification for each site (e.g. *Wadi Rum Class 1 Primal Dark Sky Sanctuary* with 99% nocturnal transparency).
-* **Topographic Elevation Profiles**: Real meters & feet elevation tracking (from *-430m* beneath sea level at the Dead Sea to *+1,500m* at Dana’s Great Rift).
-* **Astrophotographer Telemetry**: Seasonal travel windows, temperature swings, and celestial alignments (Milky Way galactic core over Ad-Deir, Orion over Jerash Roman colonnades).
+### 6. لوحة التحكم والبحث المتحفي الشامل (Museum Command Palette · `Ctrl + K`)
+نافذة بحث فوري زجاجية فائقة السرعة تتيح الوصول لأي وجهة، أو حقبة تاريخية، أو قطعة أثرية ثلاثية الأبعاد، أو أداة تفاعلية في جزء من الثانية مع دعم كامل للاختصارات ولوحة المفاتيح.
+
+<p align="center">
+  <img src="public/screenshots/06-command-palette.png" alt="Global Museum Command Palette" width="100%" style="border-radius: 8px; border: 1px solid rgba(226, 199, 153, 0.2);" />
+</p>
 
 ---
 
-### 9. 3D Virtual Archaeological Relic Showcase (`ArtifactShowcase.tsx`)
-* **Interactive Perspective Tilt**: Micro-interactive 3D cards reacting to pointer coordinates with specular light reflections (`Specular Sheen`).
-* **Authentic Curated Artifacts**:
-  * 🏺 *Nabataean Eggshell Painted Bowl* (1st Century CE · Petra) sourced from The Metropolitan Museum of Art Open Access archives.
-  * 🪙 *Decapolis Bronze Medallion of Gerasa* (c. 165 CE · Marcus Aurelius Reign).
-  * 🗺️ *Madaba Mosaic Map Compass Tessera* (c. 560 CE · Church of St. George).
-* **2X Macro Inspection**: Dedicated optical zoom button allowing micro-inspection of chiseled stone, clay walls, and Greek inscriptions.
+## 🧭 أبرز ميزات المنصة (Core Features)
+
+| الميزة | الوصف التقني | المكون المسؤول |
+| :--- | :--- | :--- |
+| **الخريطة الكارتوغرافية** | إسقاط SVG تفاعلي للمملكة مع خطوط إرشادية شمالية لمنع تداخل النقاط واستهداف لمسي `44×44px` | `InteractiveMap.tsx` |
+| **السرد الزمني السينمائي** | تجربة سكروليتيلينج من 5 حقب مع شريط تعقب عمودي وتثبيت مشاهد GSAP وتلاشٍ بصري سلس | `Scrollytelling.tsx` |
+| **المعرض الأثري ثلاثي الأبعاد** | عارض Three.js مع إضاءة بيئية PBR وظلال ناعمة وإضاءة مائلة وفحص مجسمات واقعية | `ModelViewer3D.tsx` |
+| **الخلفية الحية التفاعلية** | كانفاس هجين يحاكي أمواج التضاريس مع فيزياء تشتت مغناطيسي لمؤشر الفأرة وأمواج الصدمة | `HeritageCanvasBackground.tsx` |
+| **الصوت المحيطي الطبيعي** | محرك صوتي اصطناعي عبر Web Audio API يولد أصوات الرياح والصحراء والمياه بدون ملفات خارجية (0KB) | `AmbientSoundscape.tsx` |
+| **التعليق الصوتي الوثائقي** | قراءة وثائقية ذكية باللغتين العربية والإنجليزية مع خفض ذكي للصوت المحيطي أثناء الحديث | `VoiceNarrationPlayer.tsx` |
+| **مترجم الخط النبطي** | تحويل فوري للنصوص العربية والإنجليزية إلى نقوش الآرامية النبطية (22 حرفاً متجهاً من صخور البتراء) | `NabataeanTranslator.tsx` |
+| **حاسبة الساعات الذهبية** | معادلات فلكية لحساب شروق وغروب الشمس وساعات التصوير الذهبية والزرقاء لكل موقع بدقة | `SolarTelemetryCard.tsx` |
+| **تطبيق الويب التقدمي (PWA)** | دعم كامل للعمل بلا إنترنت (Offline Mode) في الأودية والصحاري بفضل Service Worker | `sw.js` |
 
 ---
 
-### 10. Progressive Web App & Offline Field Guide Mode
-* **Standalone PWA Architecture**: Equipped with `public/manifest.json`, high-resolution app icons, and mobile status bar theming (`#0d110f`).
-* **Offline Resilient Service Worker (`public/sw.js`)**: Caches critical UI assets, cartography layers, and destination dossiers so explorers can navigate heritage records in remote desert or mountain valleys with zero internet connectivity.
+## 🏺 الهندسة ثلاثية الأبعاد (3D & Spatial Architecture)
+
+تمت ترقية نظام عرض القطع الأثرية في الأطلس ليعتمد أعلى معايير الرندرة الواقعية الفيزيائية (**PBR**):
+
+1. **تصحيح المواد غير المعدنية (Dielectric Material Calibration):**
+   - تم ضبط معامل المعدنية `metalness: 0.03 - 0.04` والخشونة `roughness: 0.78 - 0.88` لمعالجة الخلل الشائع في تصدير مجسمات الفخار والجص، مما منح الأواني النبطية وتماثيل عين غزال مظهرها الطيني الحقيقي بدلاً من اللمعان المعدني الزائف.
+2. **انعكاسات بيئية متحفية (PMREM RoomEnvironment):**
+   - توليد خرائط انعكاس بيئية داخلية عالية الدقة باستخدام `PMREMGenerator` لمحاكاة قاعات المتاحف الكبرى.
+3. **إضاءة المسح الأثري المائل (Archaeological Raking Light):**
+   - شعاع جانبي بزاوية منخفضة حادة يبرز تفاصيل الحفر والضربات الإزميلية والنقوش اليونانية على العملات والفسيفساء.
+4. **توفير استهلاك المعالج وموارد الطاقة (Viewport & Visibility Culling):**
+   - إيقاف حلقة التصيير WebGL تلقائياً عبر `IntersectionObserver` بمجرد خروج العارض من الشاشة أو تحويل التبويب، وتحديد دقة البكسل بـ `2.0` كحد أقصى لمنع استنزاف البطارية على شاشات Retina و 4K.
 
 ---
 
-### 11. Global Museum Command Palette (`Ctrl + K` · `CommandPalette.tsx`)
-* **Instant Keyboard Gateway**: Accessible via `Ctrl + K`, `Cmd + K`, or `/` from any surface of the platform.
-* **Unified Heritage Index**: Blazing-fast fuzzy search across all 7 destinations, 5 historical eras, 3D museum relics, culinary traditions, and interactive tools.
-* **Museum Aesthetics**: Frosted glass backdrop (`backdrop-blur-2xl`), category filter pills (*Destinations*, *Eras*, *Relics*, *Cuisine*, *Tools*), and arrow-key navigation with breadcrumbs and keyboard shortcuts.
-
----
-
-### 12. Golden Hour & Solar Telemetry (`SolarTelemetryCard.tsx` · `solarCalculator.ts`)
-* **Astronomical Mathematical Engine**: Computes real-time astronomical solar position, elevation, and azimuth angles tailored to each destination's geographic coordinates.
-* **Photographer's Window Matrix**: Calculates exact local time for Dawn Blue Hour, Morning Golden Hour, Solar Noon, Evening Golden Hour, and Dusk Blue Hour with live countdown timers.
-* **Celestial Trajectory Arc**: Interactive SVG trajectory visualizer rendering the sun's path across the desert horizon with a glowing disc indicating current position.
-* **Curator's Field Lighting Guide**: Destination-specific lighting windows and lens recommendations (e.g. 8:30 AM direct Siq illumination on Petra's Treasury facade, low-angle raking light across Wadi Rum dunes).
-
----
-
-### 13. Nabataean Script Visualizer & Inscription Studio (`NabataeanTranslator.tsx`)
-* **Ancient Epigraphic Engine**: Accurate mapping of the ancient 22-consonant Nabataean Aramaic alphabet (U+10880 – U+1089F) — the direct evolutionary ancestor of modern Arabic calligraphy.
-* **Vector Glyph Precision**: 22 authentic SVG vector letterforms carved from archaeological rock inscriptions across Petra, Hegra, and Umm el-Jimal, ensuring 100% crisp rendering across all devices without font installation requirements.
-* **Interactive Stone Relief Tablet**: Live typing transcribed in real-time into chiseled rose-red sandstone relief (rendered right-to-left) with phonetic breakdown and modern Arabic cognates.
-* **Royal Presets**: One-click exploration of ancient epigraphic names (*RAQMU*, *HARETAT IV*, *SHAQILAT*, *DUSHARA*, *SHALAM*).
-
----
-
-### 14. Digital Heritage Passport & Stamp Collector (`HeritagePassport.tsx`)
-* **Royal Consular Passport Booklet**: Authentic emerald-and-gold foil embossed passport interface tracking explorer milestones.
-* **7 Bespoke Consular Seals**: Custom vintage postal seals for each destination (*Petra's Eagle & Treasury*, *Wadi Rum's Camel Caravan & Orion*, *Dead Sea's Salt Medallion*, *Jerash's Oval Forum*, *Ajloun's Falcon*, *Umm Qais's Basalt*, *Dana's Ibex*).
-* **Interactive Stamping**: Stamped upon visiting destinations with rubber-stamp spring animations, gold confetti celebration, and persistent `localStorage` progress tracking.
-* **Expedition Certificate**: Generates a shareable, certified Heritage Expedition diploma displaying the traveler's name, issue date, and collected hallmarks.
-
----
-
-### 15. Documentary Voice Narration Engine (`VoiceNarrationPlayer.tsx`)
-* **Immersive Museum Audio Guide**: Web Speech API speech synthesis engine narrating the historical epochs and 3-act narratives across destination scrollytelling scenes.
-* **Bilingual Recitation**: Naturally switches between high-fidelity English narrator voices and authentic Arabic recitation.
-* **Live Audio Visualizer**: Procedural equalizer wave bars reacting in real time to speech synthesis activity.
-* **Intelligent Audio Ducking**: Seamlessly lowers the volume of ambient desert soundscapes while voice narration is active, restoring full volume when paused or finished.
-
----
-
-## ⚡ Technology Stack
-
-| Layer | Technology | Version | Purpose |
-| :--- | :--- | :--- | :--- |
-| **Core Framework** | [Next.js](https://nextjs.org/) | `16.3.8` | App Router, static generation (`SSG`), server components, optimized assets |
-| **Runtime** | [React](https://react.dev/) | `19.2.8` | Concurrent rendering, modern hooks, declarative component model |
-| **Language** | [TypeScript](https://www.typescriptlang.org/) | `5.x` | Strict type validation for coordinates, narratives, and accessibility APIs |
-| **Styling** | [Tailwind CSS](https://tailwindcss.com/) | `v4.x` | Next-generation utility-first styling with custom CSS cascade layers |
-| **Motion & Scroll** | [GSAP](https://greensock.com/) + `@gsap/react` | `3.15.0` | `ScrollTrigger`, `Observer`, timeline pinning, camera scrub choreography |
-| **Micro-Interactions** | [Motion](https://motion.dev/) | `14.0.0` | UI spring physics, exit/enter presence, modal gestures, and drawer transitions |
-| **Audio Engine** | Web Audio API | Native | Procedural real-time synthetic soundscapes (0KB bandwidth) |
-| **Speech Narration** | Web Speech API | Native | Bilingual documentary narration with audio ducking |
-| **Icons** | [Lucide React](https://lucide.dev/) | `1.52.0` | Accessible, consistent SVG stroke icons |
-| **Typography** | Cormorant Garamond & Plus Jakarta Sans | Self-Hosted | Zero Google Fonts network dependency; privacy-first editorial typography |
-| **Unit Testing** | [Vitest](https://vitest.dev/) | `4.1.11` | Blazing-fast component, router, and motion lifecycle validation |
-| **E2E Testing** | [Playwright](https://playwright.dev/) | `1.63.0` | Multi-viewport browser testing (Chromium Desktop + Mobile Safari/iPhone) |
-
----
-
-## 🎨 Motion & UX Architecture
-
-The platform's interaction engine follows strict guidelines from `ui-ux-pro-max`, `gsap-ai-skills`, and the `motion` design standard:
+## ⚡ محرك الأداء وسلاسة الحركة (Motion & Performance)
 
 ```
 ┌────────────────────────────────────────────────────────┐
@@ -193,119 +144,102 @@ The platform's interaction engine follows strict guidelines from `ui-ux-pro-max`
     GSAP ScrollTrigger Engine      Accessible Editorial Mode
     • 60fps GPU Compositor         • Zero forced transforms
     • transform: translate3d       • Clean vertical reading flow
-    • opacity & scale only         • Instant state transitions
+    • Zero Layout Reflows          • Instant state transitions
     • Timeline pinning & scrub     • Preserved chapter hierarchy
                │                         │
                └────────────┬────────────┘
                             ▼
-           [IN-APP CINEMATIC OVERRIDE DOCK]
-      Users can switch between Cinematic & Reading 
-      modes without altering operating system settings
+            [IN-APP CINEMATIC OVERRIDE DOCK]
+       Users can toggle between Cinematic & Reading 
+       modes at any time regardless of OS settings
 ```
 
-### 1. 60fps GPU Compositor Discipline
-* **Compositor-Only Mutations**: Animations strictly modify hardware-accelerated CSS properties: `transform` (`translate3d`, `scale`, `rotate`) and `opacity`.
-* **Zero Layout Thrashing**: Geometry attributes (`width`, `height`, `top`, `left`, `margin`, `padding`) are never animated during scroll cycles, completely eliminating costly browser reflows and cumulative layout shift (`CLS < 0.02`).
-* **Subpixel Antialiasing**: Layers use `will-change: transform` and `backface-visibility: hidden` judiciously to ensure razor-sharp type rendering during scale transforms.
-
-### 2. GSAP Lifecycle & Memory Leak Defense
-In modern single-page applications, orphaned animation triggers create ghost scroll-pins and memory leaks. The Atlas implements strict lifecycle safety:
-```tsx
-useGSAP(() => {
-  const mm = gsap.matchMedia();
-  mm.add("(prefers-reduced-motion: no-preference)", () => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        pin: true,
-        scrub: 1,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-      },
-    });
-    // Layered camera scrubs
-  });
-  return () => mm.revert(); // Complete lifecycle cleanup
-}, { scope: containerRef });
-```
+- **انعدام عبء منظف الذاكرة (Zero Allocation Canvas):** تم تحويل رسم الجزيئات في الخلفية إلى استخدام `ctx.globalAlpha` وأكواد ألوان Hex ثابتة، مما ألغى أكثر من 2,500 كائن نصي كان يتم إنشاؤه في كل ثانية.
+- **كبح الحركات الخفية (Hover-Gated Animations):** في بطاقات `CometCard`، لا تدور التدرجات المخروطية إلا عند اقتراب المؤشر منها فقط، مما حرر المعالج الرسومي من تدوير عشرات الطبقات الخفية في الخلفية.
+- **فصل تمرير المتصفح عن GSAP:** ضبط `html { scroll-behavior: auto; }` لضمان عدم تعارض المحركين أثناء التمرير الزمني.
 
 ---
 
-## 🚀 Getting Started & Local Development
+## 🛠️ التقنيات المستخدمة (Technology Stack)
 
-### Prerequisites
-* **Node.js**: `v20.x` or higher
-* **Package Manager**: `npm` (v10+), `pnpm`, or `bun`
+| الطبقة | التقنية | الإصدار | الوظيفة |
+| :--- | :--- | :--- | :--- |
+| **إطار العمل الأساسي** | [Next.js](https://nextjs.org/) | `16.3.8` (Turbopack) | App Router، رندرة ثابتة فائقة السرعة (`SSG`)، تحسين الصور |
+| **مكتبة الواجهة** | [React](https://react.dev/) | `19.2.8` | المكونات التفاعلية وحالة التطبيق المتزامنة |
+| **لغة البرمجة** | [TypeScript](https://www.typescriptlang.org/) | `5.x` | أمان برمجي صارم للإحداثيات والبيانات التراثية |
+| **التنسيق والتصميم** | [Tailwind CSS](https://tailwindcss.com/) | `v4.x` | تصميم حديث قائم على متغيرات CSS والطبقات المتسلسلة |
+| **محرك الرسوميات ثلاثية الأبعاد** | [Three.js](https://threejs.org/) | `0.183.x` | عارض WebGL المتقدم للقطع الأثرية مع OrbitControls و PBR |
+| **حركة التمرير والتثبيت** | [GSAP](https://greensock.com/) + `@gsap/react` | `3.15.0` | `ScrollTrigger`, `Timeline` لتجربة السكروليتيلينج الوثائقية |
+| **حركات الواجهة التفاعلية** | [Motion](https://motion.dev/) | `14.0.0` | فيزياء النوابض وتأثيرات الظهور والانتقال |
+| **الصوت المحيطي** | Web Audio API | Native | توليد صوتي إجرائي محلي في المتصفح بحجم 0KB |
+| **التعليق الصوتي** | Web Speech API | Native | قراءة وثائقية بالإنجليزية والعربية مع خاصية خفض الصوت |
+| **فحص واختبار الوحدات** | [Vitest](https://vitest.dev/) | `4.1.11` | اختبارات المكونات والرياضيات الكارتوغرافية والحركة |
+| **اختبارات المتصفح الشاملة** | [Playwright](https://playwright.dev/) | `1.63.0` | اختبارات متعددة الأجهزة (Desktop 1440px و iPhone 390px) |
 
-### Installation
+---
+
+## 🚀 التشغيل المحلي (Getting Started & Local Development)
+
+### المتطلبات المسبقة
+- **Node.js**: الإصدار `v20.x` أو أحدث.
+- **مدير الحزم**: `npm`، `pnpm`، أو `bun`.
+
+### خطوات التثبيت والتشغيل
 
 ```bash
-# 1. Clone repository
+# 1. استنساخ المستودع
 git clone https://github.com/AhmadEmad5/Jordan-The-Heritage-Atlas.git
 cd Jordan-The-Heritage-Atlas
 
-# 2. Install dependencies
+# 2. تثبيت الحزم والاعتماديات
 npm install
 
-# 3. Start local development server
+# 3. تشغيل خادم التطوير المحلي
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to explore the Atlas.
+افتح المتصفح على الرابط: [http://localhost:3000](http://localhost:3000)
 
-### Production Build
+### بناء نسخة الإنتاج (Production Build)
 
 ```bash
-# Compile and optimize production bundle
+# تجميع وتحسين ملفات الإنتاج عبر Next.js Turbopack
 npm run build
 
-# Start production server
+# تشغيل خادم الإنتاج
 npm run start
 ```
 
 ---
 
-## 🧪 Testing & Verification
+## 🧪 الاختبارات والجودة (Testing & Quality Assurance)
 
-The repository enforces a test-driven standard across unit, component, and full end-to-end integration journeys:
-
-### 1. Type Safety Validation
 ```bash
+# 1. فحص الأنواع الصارم (TypeScript Check)
 npm run typecheck
-```
 
-### 2. Unit & Component Suite (Vitest)
-Validates waypoint mathematics, coordinate projections, motion preferences, dialog focus management, and calendar state transitions:
-```bash
+# 2. تشغيل اختبارات الوحدات وحالات الحركة (Vitest - 26/26 Tests)
 npm test
-```
 
-### 3. End-to-End Browser Testing (Playwright)
-Launches headless Chromium testing both desktop (1920×1080) and iPhone mobile viewports against a live production build:
-```bash
-# Ensure Playwright browser binaries are present
+# 3. تشغيل اختبارات المتصفح الشاملة (Playwright E2E)
 npx playwright install chromium
-
-# Execute E2E suite
 npm run test:e2e
-```
 
-### 4. Automated Visual Regression Captures
-Captures multi-device screenshot artifacts directly into `artifacts/`:
-```bash
-node tests/capture.mjs
+# 4. التقاط لقطات الشاشة التوثيقية المحدثة
+node scripts/capture-showcase.mjs
 ```
 
 ---
 
-## 📜 Cultural Attribution & Preservation
+## 📜 التوثيق الثقافي والحقوق (Cultural Attribution & Preservation)
 
-* **Data Sourcing**: Historical annotations, archaeological dating, and conservation guidelines are aligned with research published by the **Jordan Tourism Board (JTB)** and the **Department of Antiquities of Jordan**.
-* **Respectful Imagery**: All imagery highlights landscapes, architectural integrity, and local culinary traditions. Specific image licenses and photographer credits are documented in [`public/image-credits.txt`](public/image-credits.txt).
-* **Privacy & Booking Transparency**: The Stay, Taste, and Explore features direct travelers to independent, verified providers on Google Maps. The Atlas never acts as a commercial intermediary or collects personal traveler data.
+- **توثيق البيانات:** تستند المعلومات التاريخية والأثرية إلى أبحاث وسجلات **دائرة الآثار العامة الأردنية** و**هيئة تنشيط السياحة (JTB)** ومركز التراث العالمي لليونسكو.
+- **التصوير الأثري:** جميع الصور المدمجة تراعي المعالم الطبيعية والتقاليد المجتمعية. حقوق الصور ومصادرها موثقة في [`public/image-credits.txt`](public/image-credits.txt).
+- **الخصوصية:** منصة الأطلس لا تجمع أي بيانات شخصية أو بنكية، وتوجه الزوار إلى المواقع والخدمات المحلية المعتمدة عبر خرائط Google مباشرة.
 
 ---
 
 <p align="center">
-  <sub>Crafted with reverence for Jordan’s enduring heritage · Built with Next.js, GSAP, and Tailwind CSS.</sub>
+  <sub>صُنِعَ بإجلالٍ لتاريخ الأردن العريق وسحر أرضه الخالدة · مبني بأحدث تقنيات الويب الحديثة.</sub><br>
+  <sub>Crafted with reverence for Jordan’s enduring heritage · Built with Next.js, Three.js, GSAP, and Tailwind CSS.</sub>
 </p>

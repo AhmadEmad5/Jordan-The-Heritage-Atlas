@@ -120,8 +120,13 @@ export default function CommandPalette({
       }
     };
 
+    const handleCustomOpen = () => setInternalIsOpen(true);
+    window.addEventListener("open-command-palette", handleCustomOpen);
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("open-command-palette", handleCustomOpen);
+    };
   }, [isOpen]);
 
   // Focus input on open
@@ -292,6 +297,13 @@ export default function CommandPalette({
         titleAr: "حجر بوصلة خريطة مأدبا الفسيفسائية",
         subtitleEn: "Over 2 million natural stone tesserae · St. George Church",
         subtitleAr: "أكثر من مليوني حجر فسيفسائي طبيعي · كنيسة الروم الأرثوذكس",
+      },
+      {
+        id: "art-ain-ghazal",
+        titleEn: "'Ain Ghazal Neolithic Ancestor Statue",
+        titleAr: "تمثال عين غزال النيوليتي الصرحي",
+        subtitleEn: "Oldest monumental human sculpture (7500 BCE) · Zarqa Basin",
+        subtitleAr: "أقدم تمثال بشري صرحي على وجه الأرض (٧٥٠٠ ق.م) · حوض الزرقاء",
       },
     ];
 

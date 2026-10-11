@@ -160,6 +160,7 @@
     rgba(255, 255, 255, 0.08) 100%
   );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -274,20 +275,12 @@
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
+  -webkit-user-select: none;
   user-select: none;
   transform: translate3d(0, 0, 0);
   will-change: transform;
 }
 
-/* Respect user's motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .heritage-living-canvas * {
-    animation-play-state: paused !important;
-  }
-  .animate-scroll {
-    animation-play-state: paused !important;
-  }
-}
 
 /* =========================================================================
    ACETERNITY INFINITE MOVING CARDS
@@ -303,7 +296,8 @@
 }
 
 .animate-scroll {
-  animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+  animation: scroll var(--animation-duration, 40s) var(--animation-direction, normal) linear infinite;
+  will-change: transform;
 }
 
 

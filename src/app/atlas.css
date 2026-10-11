@@ -144,6 +144,7 @@ button {
   border-radius: 9999px;
   padding: 5px;
   box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
 }
 .header-nav-item {
@@ -593,6 +594,7 @@ em {
   right: 0;
   bottom: 45px;
   background: rgba(252, 249, 241, 0.94);
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(156, 80, 60, 0.28);
   border-radius: 4px;
@@ -1220,6 +1222,7 @@ em {
 }
 .insider-card {
   background: rgba(11, 15, 13, 0.65);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(217, 107, 82, 0.3);
   border-radius: 4px;
@@ -1448,6 +1451,7 @@ em {
   font-size: 10.5px;
   font-weight: 600;
   color: var(--sand);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
 }
@@ -1500,6 +1504,7 @@ em {
   background: rgba(14, 18, 16, 0.6);
   border: 1px solid rgba(226, 199, 153, 0.14);
   border-radius: 16px;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
@@ -1969,27 +1974,7 @@ em {
     height: 160px;
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-  }
-  .story-layer {
-    transform: none !important;
-  }
-  .story-panel {
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-  .story-stage {
-    height: auto !important;
-  }
-}
+
 @media (min-width: 761px) {
   .atlas-hero {
     grid-template-columns: minmax(0, 38fr) minmax(0, 62fr);
@@ -2065,6 +2050,7 @@ em {
   font-size: 11px;
   font-weight: 500;
   color: rgba(235, 230, 220, 0.75);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   cursor: pointer;
   transition: all 0.25s ease;
@@ -2100,6 +2086,7 @@ em {
   font-family: var(--font-plus-jakarta), "Alexandria", sans-serif;
   font-size: 13px;
   color: #f5efe6;
+  -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   transition: all 0.25s ease;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -2148,6 +2135,7 @@ em {
   background: rgba(18, 23, 20, 0.4);
   border: 1px dashed rgba(229, 185, 143, 0.2);
   border-radius: 24px;
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
 
@@ -2238,6 +2226,7 @@ em {
   border-radius: 9999px;
   color: var(--sand);
   cursor: pointer;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
@@ -2302,6 +2291,7 @@ em {
   border-radius: 22px;
   padding: 26px 28px;
   box-shadow: 0 14px 35px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   display: flex;
   flex-direction: column;
@@ -2768,11 +2758,16 @@ em {
 }
 .artifact-tabs-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 14px;
   margin: 28px 0 32px;
 }
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
+  .artifact-tabs-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
   .artifact-tabs-row {
     grid-template-columns: 1fr;
   }
@@ -2849,7 +2844,8 @@ em {
 .artifact-media-wrap {
   position: relative;
   width: 100%;
-  height: 380px;
+  height: 480px;
+  min-height: 480px;
   overflow: hidden;
   background: #101513;
 }
@@ -2881,6 +2877,7 @@ em {
   font-size: 11px;
   font-weight: 600;
   color: var(--sand);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .artifact-inspect-btn {
@@ -2899,6 +2896,7 @@ em {
   font-size: 11px;
   font-weight: 600;
   cursor: pointer;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   transition: all 0.2s ease;
 }
@@ -3030,6 +3028,162 @@ em {
     left: 16px;
     right: 16px;
   }
+}
+
+/* ==========================================================================
+   GLOBAL UI SYSTEM UPGRADES: HEADER SEARCH, EQUALIZER, HERO TELEMETRY & TABS
+   ========================================================================== */
+
+/* Quick Command Palette Header Trigger */
+.header-search-palette-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(22, 28, 25, 0.75);
+  border: 1px solid rgba(229, 185, 143, 0.24);
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(235, 230, 220, 0.85);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.header-search-palette-btn:hover {
+  background: rgba(30, 38, 34, 0.9);
+  border-color: rgba(229, 185, 143, 0.6);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 12px rgba(229, 185, 143, 0.2);
+}
+.header-search-palette-btn kbd {
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--gold);
+  background: rgba(229, 185, 143, 0.12);
+  border: 1px solid rgba(229, 185, 143, 0.3);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+/* Audio Synthesizer Living Sound Wave Equalizer */
+@keyframes soundWave1 {
+  0%, 100% { height: 4px; }
+  50% { height: 13px; }
+}
+@keyframes soundWave2 {
+  0%, 100% { height: 11px; }
+  50% { height: 5px; }
+}
+@keyframes soundWave3 {
+  0%, 100% { height: 6px; }
+  50% { height: 14px; }
+}
+
+/* Hero Historical Telemetry Chips */
+.hero-telemetry-chips {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 24px;
+  flex-wrap: wrap;
+}
+.hero-chip {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 14px;
+  background: rgba(20, 26, 23, 0.7);
+  border: 1px solid rgba(229, 185, 143, 0.2);
+  border-radius: 14px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.hero-chip:hover {
+  border-color: rgba(229, 185, 143, 0.45);
+  transform: translateY(-1px);
+}
+.hero-chip-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+.hero-chip strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--sand);
+  line-height: 1.2;
+}
+.hero-chip span {
+  display: block;
+  font-size: 9.5px;
+  color: rgba(235, 230, 220, 0.65);
+  line-height: 1.2;
+}
+
+/* Destination Card Travel Telemetry Chips */
+.card-travel-chips {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0 12px;
+  flex-wrap: wrap;
+}
+.travel-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(235, 230, 220, 0.85);
+  font-family: inherit;
+  letter-spacing: 0.2px;
+}
+.category-tag-ancient-wonders {
+  color: #dfb155 !important;
+}
+.category-tag-wild-landscapes {
+  color: #4ade80 !important;
+}
+.category-tag-living-heritage {
+  color: #f87171 !important;
+}
+
+/* Visual Relic Selector Tabs with Thumbnails */
+.artifact-tab-btn {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 12px 18px !important;
+}
+.tab-thumb-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid rgba(226, 199, 153, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+  background: #0f1412;
+}
+.tab-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.artifact-tab-btn.is-active .tab-thumb-box {
+  border-color: #f7d08a;
+  box-shadow: 0 0 16px rgba(247, 208, 138, 0.5);
+}
+.tab-info-group {
+  flex: 1;
+  min-width: 0;
 }
 
 

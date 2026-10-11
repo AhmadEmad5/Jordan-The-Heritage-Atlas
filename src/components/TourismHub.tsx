@@ -211,6 +211,18 @@ export default function TourismHub() {
         <div className="header-right">
           <button
             type="button"
+            onClick={() => window.dispatchEvent(new CustomEvent("open-command-palette"))}
+            className="header-search-palette-btn"
+            aria-label={t("Search the Atlas (Cmd+K)", "البحث في الأطلس (Cmd+K)")}
+            title={t("Quick Search (⌘K)", "بحث سريع (⌘K)")}
+          >
+            <Search size={13} className="text-[#d49b6a]" />
+            <span className="hidden sm:inline">{t("Search", "بحث")}</span>
+            <kbd className="hidden md:inline-flex">⌘K</kbd>
+          </button>
+
+          <button
+            type="button"
             onClick={() => {
               if (ambientEngine) {
                 const active = ambientEngine.toggle();
@@ -228,7 +240,11 @@ export default function TourismHub() {
             }
           >
             {isSoundOn ? (
-              <Volume2 size={13} className="text-amber-300 animate-pulse" />
+              <div className="flex items-end gap-[2px] h-3 px-0.5" aria-hidden="true">
+                <span className="w-[2.5px] h-3 bg-amber-400 rounded-full animate-[soundWave1_0.8s_ease-in-out_infinite]" />
+                <span className="w-[2.5px] h-2 bg-amber-300 rounded-full animate-[soundWave2_1.1s_ease-in-out_infinite]" />
+                <span className="w-[2.5px] h-3.5 bg-amber-400 rounded-full animate-[soundWave3_0.9s_ease-in-out_infinite]" />
+              </div>
             ) : (
               <VolumeX size={13} />
             )}
@@ -289,6 +305,29 @@ export default function TourismHub() {
             Ancient cities. Untamed landscapes. Stories that stay with you. Let
             your curiosity be your compass.
           </p>
+          <div className="hero-telemetry-chips">
+            <div className="hero-chip">
+              <span className="hero-chip-icon">🏛️</span>
+              <div>
+                <strong>{t("5 UNESCO Sites", "٥ مواقع يونسكو")}</strong>
+                <span>{t("World Heritage", "تراث عالمي")}</span>
+              </div>
+            </div>
+            <div className="hero-chip">
+              <span className="hero-chip-icon">⏳</span>
+              <div>
+                <strong>{t("7,500 BCE", "٧٥٠٠ ق.م")}</strong>
+                <span>{t("'Ain Ghazal Statues", "تماثيل عين غزال")}</span>
+              </div>
+            </div>
+            <div className="hero-chip">
+              <span className="hero-chip-icon">🌊</span>
+              <div>
+                <strong>{t("-430m Basin", "-٤٣٠م")}</strong>
+                <span>{t("Earth's Lowest Point", "أخفض نقطة بالأرض")}</span>
+              </div>
+            </div>
+          </div>
           <div className="explore-hint">
             <span>
               <Compass size={19} />
@@ -506,7 +545,9 @@ export default function TourismHub() {
                       style={{ transform: "translateZ(25px)" }}
                     >
                       <div className="card-top-meta">
-                        <span className="eyebrow">{d.category}</span>
+                        <span className={`eyebrow category-tag category-tag-${d.category.toLowerCase().replace(/\s+/g, "-")}`}>
+                          {d.category}
+                        </span>
                         <span className="governorate-badge" lang="ar">
                           {d.governorate.ar}
                         </span>
@@ -518,6 +559,24 @@ export default function TourismHub() {
                         </span>
                       </h3>
                       <p>{d.hook}</p>
+                      <div className="card-travel-chips">
+                        <span className="travel-chip">
+                          {d.category === "Ancient wonders"
+                            ? "⏱️ 1–2 Days"
+                            : d.category === "Wild landscapes"
+                            ? "⏱️ Full Day"
+                            : "⏱️ Half Day"}
+                        </span>
+                        <span className="travel-chip">
+                          {d.slug === "dead-sea"
+                            ? "🌊 Year-Round"
+                            : d.slug === "wadi-rum"
+                            ? "🌌 Dark Sky"
+                            : d.slug === "petra"
+                            ? "🍂 Oct–May"
+                            : "🌤️ Spring / Autumn"}
+                        </span>
+                      </div>
                       <div className="card-footer-meta">
                         <span className="region">
                           <MapPin size={12} />
@@ -724,6 +783,15 @@ export default function TourismHub() {
           <Sparkles size={16} />
           <span>{t("Realms", "الأقاليم")}</span>
         </a>
+        <button
+          type="button"
+          onClick={() => window.dispatchEvent(new CustomEvent("open-command-palette"))}
+          className="mobile-dock-item"
+          aria-label="Search"
+        >
+          <Search size={16} />
+          <span>{t("Search", "بحث")}</span>
+        </button>
         <button
           type="button"
           onClick={toggleLanguage}

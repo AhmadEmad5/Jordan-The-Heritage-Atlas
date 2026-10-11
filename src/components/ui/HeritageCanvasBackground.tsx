@@ -35,11 +35,7 @@ export const HERITAGE_THEMES: Record<HeritageThemeKey, HeritageTheme> = {
     glow3: "radial-gradient(circle, rgba(27, 122, 130, 0.16) 0%, rgba(15, 76, 92, 0.05) 55%, transparent 80%)",
     glow4: "radial-gradient(circle, rgba(194, 94, 59, 0.12) 0%, transparent 65%)",
     contourStroke: "rgba(226, 199, 153, 0.075)",
-    particleColors: [
-      "rgba(226, 199, 153, ",
-      "rgba(212, 155, 106, ",
-      "rgba(251, 251, 251, ",
-    ],
+    particleColors: ["#E2C799", "#D49B6A", "#FBFBFB"],
   },
   petra: {
     key: "petra",
@@ -50,11 +46,7 @@ export const HERITAGE_THEMES: Record<HeritageThemeKey, HeritageTheme> = {
     glow3: "radial-gradient(circle, rgba(120, 40, 40, 0.38) 0%, rgba(22, 25, 23, 0.2) 65%, transparent 80%)",
     glow4: "radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 65%)",
     contourStroke: "rgba(226, 199, 153, 0.09)",
-    particleColors: [
-      "rgba(226, 199, 153, ",
-      "rgba(212, 155, 106, ",
-      "rgba(245, 158, 11, ",
-    ],
+    particleColors: ["#E2C799", "#D49B6A", "#F59E0B"],
   },
   "wadi-rum": {
     key: "wadi-rum",
@@ -65,11 +57,7 @@ export const HERITAGE_THEMES: Record<HeritageThemeKey, HeritageTheme> = {
     glow3: "radial-gradient(circle, rgba(17, 24, 39, 0.90) 0%, rgba(11, 14, 20, 0.6) 65%, transparent 85%)",
     glow4: "radial-gradient(circle, rgba(245, 158, 11, 0.16) 0%, transparent 65%)",
     contourStroke: "rgba(226, 199, 153, 0.085)",
-    particleColors: [
-      "rgba(245, 158, 11, ",
-      "rgba(255, 237, 213, ",
-      "rgba(210, 95, 55, ",
-    ],
+    particleColors: ["#F59E0B", "#FFEDD5", "#D25F37"],
   },
   jerash: {
     key: "jerash",
@@ -80,11 +68,7 @@ export const HERITAGE_THEMES: Record<HeritageThemeKey, HeritageTheme> = {
     glow3: "radial-gradient(circle, rgba(31, 36, 33, 0.55) 0%, rgba(22, 25, 23, 0.3) 65%, transparent 80%)",
     glow4: "radial-gradient(circle, rgba(226, 199, 153, 0.15) 0%, transparent 65%)",
     contourStroke: "rgba(226, 199, 153, 0.08)",
-    particleColors: [
-      "rgba(226, 199, 153, ",
-      "rgba(197, 160, 89, ",
-      "rgba(251, 251, 251, ",
-    ],
+    particleColors: ["#E2C799", "#C5A059", "#FBFBFB"],
   },
   "amman-citadel": {
     key: "amman-citadel",
@@ -95,11 +79,7 @@ export const HERITAGE_THEMES: Record<HeritageThemeKey, HeritageTheme> = {
     glow3: "radial-gradient(circle, rgba(31, 36, 33, 0.50) 0%, rgba(22, 25, 23, 0.3) 65%, transparent 80%)",
     glow4: "radial-gradient(circle, rgba(179, 84, 70, 0.14) 0%, transparent 65%)",
     contourStroke: "rgba(212, 155, 106, 0.08)",
-    particleColors: [
-      "rgba(226, 199, 153, ",
-      "rgba(212, 155, 106, ",
-      "rgba(184, 74, 57, ",
-    ],
+    particleColors: ["#E2C799", "#D49B6A", "#B84A39"],
   },
   "dead-sea": {
     key: "dead-sea",
@@ -110,11 +90,7 @@ export const HERITAGE_THEMES: Record<HeritageThemeKey, HeritageTheme> = {
     glow3: "radial-gradient(circle, rgba(6, 8, 9, 0.75) 0%, rgba(18, 38, 43, 0.3) 65%, transparent 80%)",
     glow4: "radial-gradient(circle, rgba(251, 251, 251, 0.14) 0%, transparent 65%)",
     contourStroke: "rgba(92, 163, 157, 0.09)",
-    particleColors: [
-      "rgba(251, 251, 251, ",
-      "rgba(92, 163, 157, ",
-      "rgba(224, 242, 241, ",
-    ],
+    particleColors: ["#FBFBFB", "#5CA39D", "#E0F2F1"],
   },
   ajloun: {
     key: "ajloun",
@@ -125,11 +101,7 @@ export const HERITAGE_THEMES: Record<HeritageThemeKey, HeritageTheme> = {
     glow3: "radial-gradient(circle, rgba(7, 10, 8, 0.75) 0%, rgba(15, 26, 20, 0.3) 65%, transparent 80%)",
     glow4: "radial-gradient(circle, rgba(185, 156, 106, 0.10) 0%, transparent 65%)",
     contourStroke: "rgba(163, 190, 169, 0.08)",
-    particleColors: [
-      "rgba(163, 190, 169, ",
-      "rgba(226, 199, 153, ",
-      "rgba(251, 251, 251, ",
-    ],
+    particleColors: ["#A3BEA9", "#E2C799", "#FBFBFB"],
   },
   "umm-qais": {
     key: "umm-qais",
@@ -140,11 +112,7 @@ export const HERITAGE_THEMES: Record<HeritageThemeKey, HeritageTheme> = {
     glow3: "radial-gradient(circle, rgba(8, 9, 10, 0.75) 0%, rgba(20, 24, 26, 0.3) 65%, transparent 80%)",
     glow4: "radial-gradient(circle, rgba(59, 82, 73, 0.12) 0%, transparent 65%)",
     contourStroke: "rgba(180, 200, 195, 0.08)",
-    particleColors: [
-      "rgba(180, 200, 195, ",
-      "rgba(226, 199, 153, ",
-      "rgba(251, 251, 251, ",
-    ],
+    particleColors: ["#B4C8C3", "#E2C799", "#FBFBFB"],
   },
 };
 
@@ -168,11 +136,21 @@ interface MoteParticle {
   y: number;
   vx: number;
   vy: number;
+  baseVx: number;
+  baseVy: number;
   size: number;
   baseAlpha: number;
   pulseSpeed: number;
   pulsePhase: number;
   colorIdx: number;
+}
+
+interface RippleWave {
+  x: number;
+  y: number;
+  radius: number;
+  maxRadius: number;
+  alpha: number;
 }
 
 interface HeritageCanvasBackgroundProps {
@@ -246,32 +224,23 @@ export function HeritageCanvasBackground({
     let currentMouseY = 0.5;
     let scrollY = 0;
 
-    // Reduced motion preference
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let prefersReducedMotion = mediaQuery.matches;
-
-    function onMediaChange(e: MediaQueryListEvent) {
-      prefersReducedMotion = e.matches;
-    }
-
-    if (mediaQuery.addEventListener) {
-      mediaQuery.addEventListener("change", onMediaChange);
-    } else {
-      mediaQuery.addListener(onMediaChange);
-    }
-
     // Allocate particle pool (fixed size to avoid GC churn)
-    const PARTICLE_COUNT = 38;
+    const PARTICLE_COUNT = 42;
     const particles: MoteParticle[] = [];
+    const ripples: RippleWave[] = [];
 
     function initParticles() {
       particles.length = 0;
       for (let i = 0; i < PARTICLE_COUNT; i++) {
+        const bVx = (Math.random() - 0.48) * 0.22;
+        const bVy = -(0.15 + Math.random() * 0.3);
         particles.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          vx: (Math.random() - 0.48) * 0.22,
-          vy: -(0.15 + Math.random() * 0.3), // gentle upward desert twilight draft
+          vx: bVx,
+          vy: bVy,
+          baseVx: bVx,
+          baseVy: bVy,
           size: 0.9 + Math.random() * 1.6,
           baseAlpha: 0.2 + Math.random() * 0.45,
           pulseSpeed: 0.0015 + Math.random() * 0.002,
@@ -296,15 +265,10 @@ export function HeritageCanvasBackground({
       if (particles.length === 0) {
         initParticles();
       } else {
-        // Adjust bounds proportionally
         for (const p of particles) {
           if (p.x > width) p.x = Math.random() * width;
           if (p.y > height) p.y = Math.random() * height;
         }
-      }
-
-      if (prefersReducedMotion) {
-        renderStaticFrame();
       }
     }
 
@@ -313,22 +277,42 @@ export function HeritageCanvasBackground({
       targetMouseY = e.clientY / Math.max(height, 1);
     }
 
+    function onClick(e: MouseEvent) {
+      if (ripples.length < 5) {
+        ripples.push({
+          x: e.clientX,
+          y: e.clientY,
+          radius: 4,
+          maxRadius: Math.min(width, height) * 0.28,
+          alpha: 0.35,
+        });
+      }
+    }
+
     function onScroll() {
       scrollY = window.scrollY || window.pageYOffset || 0;
     }
 
+    function onVisibilityChange() {
+      if (document.hidden) {
+        if (animId !== null) {
+          cancelAnimationFrame(animId);
+          animId = null;
+        }
+      } else {
+        if (animId === null) {
+          animId = requestAnimationFrame(loop);
+        }
+      }
+    }
+
     window.addEventListener("resize", resize, { passive: true });
     window.addEventListener("mousemove", onMouseMove, { passive: true });
+    window.addEventListener("click", onClick, { passive: true });
     window.addEventListener("scroll", onScroll, { passive: true });
+    document.addEventListener("visibilitychange", onVisibilityChange);
 
     resize();
-
-    // Static frame renderer for accessibility fallback
-    function renderStaticFrame() {
-      if (!ctx) return;
-      ctx.clearRect(0, 0, width, height);
-      drawTopographicContours(0, 0.5, 0.5, 0);
-    }
 
     function drawTopographicContours(
       time: number,
@@ -342,7 +326,7 @@ export function HeritageCanvasBackground({
       ctx.strokeStyle = activeTheme.contourStroke;
 
       const numContours = 7;
-      const xStep = Math.max(18, Math.floor(width / 50));
+      const xStep = Math.max(24, Math.floor(width / 36));
 
       for (let i = 0; i < numContours; i++) {
         const baseY = (height / (numContours + 1)) * (i + 1);
@@ -358,7 +342,7 @@ export function HeritageCanvasBackground({
           const wave2 = Math.cos(nx * 8.6 - phase * 0.7 + i * 0.4) * 14;
           const wave3 = Math.sin(nx * 15.4 + phase * 0.3) * 6;
 
-          // Subtle curvature pull towards mouse
+          // Gentle magnetic curvature pull towards mouse
           const dx = nx - mx;
           const mouseInfluence =
             Math.exp(-dx * dx * 16) * ((my * height - baseY) * 0.06);
@@ -377,25 +361,62 @@ export function HeritageCanvasBackground({
     }
 
     function loop(time: number) {
-      const effectiveTime = prefersReducedMotion ? time * 0.3 : time;
-
       // Smooth lerp mouse tracking
       currentMouseX += (targetMouseX - currentMouseX) * 0.045;
       currentMouseY += (targetMouseY - currentMouseY) * 0.045;
+
+      const mousePxX = currentMouseX * width;
+      const mousePxY = currentMouseY * height;
 
       if (ctx) {
         ctx.clearRect(0, 0, width, height);
 
         // Layer 1: Topographic Elevation Contours
-        drawTopographicContours(effectiveTime, currentMouseX, currentMouseY, scrollY);
+        drawTopographicContours(time, currentMouseX, currentMouseY, scrollY);
 
-        // Layer 2: Desert Dust & Starlight Particle System
+        // Layer 1.5: Sand Ripple Waves
+        if (ripples.length > 0) {
+          ctx.lineWidth = 1;
+          for (let rIdx = ripples.length - 1; rIdx >= 0; rIdx--) {
+            const rip = ripples[rIdx];
+            rip.radius += 2.2;
+            rip.alpha *= 0.97;
+
+            ctx.globalAlpha = Math.max(0, rip.alpha * 0.3);
+            ctx.strokeStyle = "#E2C799";
+            ctx.beginPath();
+            ctx.arc(rip.x, rip.y, rip.radius, 0, Math.PI * 2);
+            ctx.stroke();
+
+            if (rip.radius >= rip.maxRadius || rip.alpha <= 0.01) {
+              ripples.splice(rIdx, 1);
+            }
+          }
+        }
+
+        // Layer 2: Desert Dust & Starlight Particle System with Magnetic Physics
         const colors = activeTheme.particleColors;
         for (let i = 0; i < particles.length; i++) {
           const p = particles[i];
 
+          // Cursor Magnetic Dispersion Physics
+          const pDx = p.x - mousePxX;
+          const pDy = p.y - mousePxY;
+          const pDist = Math.hypot(pDx, pDy);
+          const cursorRadius = 140;
+
+          if (pDist < cursorRadius && pDist > 1) {
+            const push = (1 - pDist / cursorRadius) * 0.42;
+            p.vx += (pDx / pDist) * push;
+            p.vy += (pDy / pDist) * push;
+          }
+
+          // Return softly toward baseline wind drift
+          p.vx += (p.baseVx - p.vx) * 0.04;
+          p.vy += (p.baseVy - p.vy) * 0.04;
+
           // Advance particle position
-          p.x += p.vx + Math.sin(effectiveTime * 0.0008 + p.pulsePhase) * 0.16;
+          p.x += p.vx + Math.sin(time * 0.0008 + p.pulsePhase) * 0.16;
           p.y += p.vy;
 
           // Boundary wrapping
@@ -409,14 +430,15 @@ export function HeritageCanvasBackground({
           // Gentle breathing opacity
           const alpha =
             p.baseAlpha *
-            (0.55 + 0.45 * Math.sin(effectiveTime * p.pulseSpeed + p.pulsePhase));
+            (0.55 + 0.45 * Math.sin(time * p.pulseSpeed + p.pulsePhase));
 
-          const prefix = colors[p.colorIdx % colors.length] || colors[0];
-          ctx.fillStyle = `${prefix}${alpha.toFixed(3)})`;
+          ctx.globalAlpha = Math.max(0, Math.min(1, alpha));
+          ctx.fillStyle = colors[p.colorIdx % colors.length] || colors[0];
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
           ctx.fill();
         }
+        ctx.globalAlpha = 1.0;
       }
 
       animId = requestAnimationFrame(loop);
@@ -428,12 +450,9 @@ export function HeritageCanvasBackground({
       if (animId !== null) cancelAnimationFrame(animId);
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("click", onClick);
       window.removeEventListener("scroll", onScroll);
-      if (mediaQuery.removeEventListener) {
-        mediaQuery.removeEventListener("change", onMediaChange);
-      } else {
-        mediaQuery.removeListener(onMediaChange);
-      }
+      document.removeEventListener("visibilitychange", onVisibilityChange);
     };
   }, [activeTheme]);
 
@@ -444,7 +463,6 @@ export function HeritageCanvasBackground({
       role="presentation"
       style={{
         transform: "translate3d(0, 0, 0)",
-        willChange: "transform",
       }}
     >
       {/* LAYER 0: Base Mesh & Heritage Light Pools */}
@@ -452,41 +470,37 @@ export function HeritageCanvasBackground({
 
       {/* Atmospheric Glow Pool 1 - Top Left Primary */}
       <div
-        className="absolute -top-[15%] -left-[10%] w-[68vw] h-[68vw] max-w-[950px] max-h-[950px] rounded-full blur-[130px] opacity-75 transition-all duration-1200 ease-out"
+        className="absolute -top-[15%] -left-[10%] w-[68vw] h-[68vw] max-w-[950px] max-h-[950px] rounded-full blur-[64px] opacity-75 transition-all duration-1200 ease-out"
         style={{
           background: activeTheme.glow1,
           transform: "translate3d(0, 0, 0)",
-          willChange: "opacity, background",
         }}
       />
 
       {/* Atmospheric Glow Pool 2 - Center / Right Accent */}
       <div
-        className="absolute top-[22%] -right-[15%] w-[62vw] h-[62vw] max-w-[880px] max-h-[880px] rounded-full blur-[140px] opacity-65 transition-all duration-1200 ease-out"
+        className="absolute top-[22%] -right-[15%] w-[62vw] h-[62vw] max-w-[880px] max-h-[880px] rounded-full blur-[64px] opacity-65 transition-all duration-1200 ease-out"
         style={{
           background: activeTheme.glow2,
           transform: "translate3d(0, 0, 0)",
-          willChange: "opacity, background",
         }}
       />
 
       {/* Atmospheric Glow Pool 3 - Lower Ambient Foundation */}
       <div
-        className="absolute -bottom-[20%] left-[15%] w-[75vw] h-[75vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[150px] opacity-70 transition-all duration-1200 ease-out"
+        className="absolute -bottom-[20%] left-[15%] w-[75vw] h-[75vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[64px] opacity-70 transition-all duration-1200 ease-out"
         style={{
           background: activeTheme.glow3,
           transform: "translate3d(0, 0, 0)",
-          willChange: "opacity, background",
         }}
       />
 
       {/* Atmospheric Glow Pool 4 - Dynamic Secondary Highlight */}
       <div
-        className="absolute top-[52%] left-[8%] w-[48vw] h-[48vw] max-w-[680px] max-h-[680px] rounded-full blur-[125px] opacity-45 transition-all duration-1200 ease-out"
+        className="absolute top-[52%] left-[8%] w-[48vw] h-[48vw] max-w-[680px] max-h-[680px] rounded-full blur-[64px] opacity-45 transition-all duration-1200 ease-out"
         style={{
           background: activeTheme.glow4,
           transform: "translate3d(0, 0, 0)",
-          willChange: "opacity, background",
         }}
       />
 
